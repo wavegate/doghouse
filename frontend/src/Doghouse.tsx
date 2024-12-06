@@ -24,7 +24,9 @@ const Doghouse = () => {
 
   return (
     <div className={`flex flex-col items-center`}>
-      <div className={`flex flex-col max-w-[1176px] gap-[84px]`}>
+      <div
+        className={`flex flex-col max-w-[1176px] max-sm:max-w-[100dvw] max-sm:px-[16px] gap-[84px]`}
+      >
         <div>{data?.Name}'s Doghouse</div>
         <Carousel />
         <div>

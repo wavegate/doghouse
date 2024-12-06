@@ -152,18 +152,28 @@ const Carousel = () => {
         </>
       )}
       <div className={`flex flex-col gap-[24px]`}>
-        <div className={`flex justify-between`}>
-          <div className={`self-end flex flex-col gap-[12px]`}>
+        <div
+          className={`flex justify-between max-sm:flex-col max-sm:gap-[20px]`}
+        >
+          <div
+            className={`self-end max-sm:self-start flex flex-col gap-[12px] max-sm:gap-[6px]`}
+          >
             <div className="tracking-widest font-light">
               {images[currentIndex].date}
             </div>
-            <h1 className={`text-[36px] font-medium leading-[36px]`}>
+            <h1
+              className={`text-[36px] font-medium leading-[36px] max-sm:text-[30px]`}
+            >
               {images[currentIndex].title}
             </h1>
           </div>
-          <div className={`flex flex-col gap-[16px] pl-[84px] pr-[24px]`}>
+          <div
+            className={`flex flex-col gap-[16px] sm:pl-[84px] sm:pr-[24px] max-sm:gap-[4px]`}
+          >
             <div className={`flex gap-[18px] items-end`}>
-              <div className={`text-[24px] leading-[30px] text-nowrap`}>
+              <div
+                className={`text-[24px] leading-[30px] text-nowrap max-sm:text-[18px]`}
+              >
                 <span className={`opacity-50 pr-[12px] font-light`}>
                   Photo by:{" "}
                 </span>{" "}
@@ -172,10 +182,10 @@ const Carousel = () => {
                 </span>
               </div>
             </div>
-            <div className={`flex gap-[12px] self-end`}>
-              <FaSquarePinterest className={`text-[36px]`} />
-              <FaSquareInstagram className={`text-[36px]`} />
-              <FaSquareFacebook className={`text-[36px]`} />
+            <div className={`flex gap-[12px] sm:self-end`}>
+              <FaSquarePinterest className={`text-[36px] max-sm:text-[24px]`} />
+              <FaSquareInstagram className={`text-[36px] max-sm:text-[24px]`} />
+              <FaSquareFacebook className={`text-[36px] max-sm:text-[24px]`} />
             </div>
           </div>
         </div>
@@ -183,17 +193,17 @@ const Carousel = () => {
         <div className={`relative`}>
           <button
             onClick={handlePrev}
-            className={`absolute pr-[12px] -translate-x-full h-full`}
+            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 text-white`}
           >
-            <FaChevronCircleLeft className={`text-[40px]`} />
+            <FaChevronCircleLeft className={`text-[28px] sm:text-[40px]`} />
           </button>
           <button
             onClick={handleNext}
-            className={`absolute h-full right-0 pl-[12px] translate-x-full`}
+            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 text-white`}
           >
-            <FaChevronCircleRight className={`text-[40px]`} />
+            <FaChevronCircleRight className={`text-[28px] sm:text-[40px]`} />
           </button>
-          <div className={`overflow-hidden rounded-[36px]`}>
+          <div className={`overflow-hidden rounded-[24px] sm:rounded-[36px]`}>
             <div
               className={`flex transition-transform duration-300`}
               style={{
@@ -244,15 +254,15 @@ const Carousel = () => {
         <div className={`relative`}>
           <button
             onClick={handleSecondaryPrev}
-            className={`absolute pr-[12px] -translate-x-full h-full`}
+            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 text-white`}
           >
-            <FaChevronCircleLeft className={`text-[40px]`} />
+            <FaChevronCircleLeft className={`text-[20px] sm:text-[40px]`} />
           </button>
           <button
             onClick={handleSecondaryNext}
-            className={`absolute h-full right-0 pl-[12px] translate-x-full`}
+            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 text-white`}
           >
-            <FaChevronCircleRight className={`text-[40px]`} />
+            <FaChevronCircleRight className={`text-[20px] sm:text-[40px]`} />
           </button>
           <div className={`overflow-hidden`}>
             <div
@@ -275,17 +285,20 @@ const Carousel = () => {
                   {chunk.map((image, i) => {
                     return (
                       <div
-                        className={`p-[14px] cursor-pointer ${
+                        className={`p-[6px] sm:p-[14px] cursor-pointer ${
                           image === images[currentIndex]
                             ? `bg-blue-400`
                             : `bg-black`
-                        } ${i === 0 && `rounded-l-[20px]`} ${
-                          i === chunk.length - 1 && `rounded-r-[20px]`
+                        } ${
+                          i === 0 && `rounded-l-[12px] sm:rounded-l-[20px]`
+                        } ${
+                          i === chunk.length - 1 &&
+                          `rounded-r-[12px] sm:rounded-r-[20px]`
                         }`}
                         onClick={() => handleItemClick(index, i)}
                         key={i}
                       >
-                        <div className="aspect-video bg-black rounded-[20px] overflow-hidden">
+                        <div className="aspect-video bg-black rounded-[6px] sm:rounded-[20px] overflow-hidden">
                           <img
                             key={i}
                             className={`object-contain w-full h-full`}
