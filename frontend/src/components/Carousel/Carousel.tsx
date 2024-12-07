@@ -133,10 +133,10 @@ const Carousel = () => {
       {open && (
         <>
           <div
-            className={`fixed z-10 w-[100dvw] h-[100dvh] top-0 left-0 bg-black opacity-80`}
+            className={`fixed z-20 w-[100dvw] h-[100dvh] top-0 left-0 bg-black opacity-80`}
           ></div>
           <div
-            className={`fixed z-10 w-[90dvw] h-[90dvh] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-[20px] overflow-hidden`}
+            className={`fixed z-20 w-[90dvw] h-[90dvh] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-[20px] overflow-hidden`}
           >
             <img
               className={`object-contain bg-black w-full h-full`}
@@ -193,13 +193,13 @@ const Carousel = () => {
         <div className={`relative`}>
           <button
             onClick={handlePrev}
-            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 text-white`}
+            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 max-sm:text-white`}
           >
             <FaChevronCircleLeft className={`text-[28px] sm:text-[40px]`} />
           </button>
           <button
             onClick={handleNext}
-            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 text-white`}
+            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 max-sm:text-white`}
           >
             <FaChevronCircleRight className={`text-[28px] sm:text-[40px]`} />
           </button>
@@ -254,13 +254,13 @@ const Carousel = () => {
         <div className={`relative`}>
           <button
             onClick={handleSecondaryPrev}
-            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 text-white`}
+            className={`absolute left-[12px] sm:left-0 sm:pr-[12px] sm:-translate-x-full h-full z-10 max-sm:text-white`}
           >
             <FaChevronCircleLeft className={`text-[20px] sm:text-[40px]`} />
           </button>
           <button
             onClick={handleSecondaryNext}
-            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 text-white`}
+            className={`absolute right-[12px] sm:right-0 h-full sm:pl-[12px] sm:translate-x-full z-10 max-sm:text-white`}
           >
             <FaChevronCircleRight className={`text-[20px] sm:text-[40px]`} />
           </button>
